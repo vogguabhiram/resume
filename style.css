@@ -1,51 +1,87 @@
-/* General body styles */
+/* Import a Google font for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: aliceblue;
+  background-color: #f7f9fc;
+  color: #333;
 }
 
-/* Container for the content */
 .container {
-  color: #060606;
   width: 80%;
-  margin: auto;
-  overflow: hidden;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
 
-/* Header styles */
+/* Header Section */
 .header {
-  color: #0b0c0c;
-  padding: 10px 0;
   text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .header h1 {
+  font-size: 2.8em;
   margin: 0;
-  font-size: 2.5em;
+  color: #2c3e50;
 }
 
 .header .role {
   font-size: 1.2em;
   margin: 5px 0;
+  color: #3498db;
+  font-weight: 500;
 }
 
-.header .contact {
-  margin: 10px 0;
+.header .contact p {
+  margin: 5px 0;
+  font-size: 0.95em;
 }
 
-/* Section headings */
+.header .contact a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.header .contact a:hover {
+  text-decoration: underline;
+}
+
+/* Section Titles */
 h2 {
-  border-bottom: 2px solid #333;
+  font-size: 1.5em;
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  position: relative;
   padding-bottom: 5px;
-  margin-top: 20px;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  margin-top: 5px;
+  border-radius: 2px;
 }
 
 /* Lists */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
 li {
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 /* Tables */
@@ -56,18 +92,42 @@ table {
 }
 
 th, td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
 }
 
 th {
-  background: #f4f4f4;
+  background-color: #3498db;
+  color: #fff;
+  text-align: left;
 }
 
-/* Horizontal rule */
+/* Horizontal Rule */
 hr {
-  margin: 20px 0;
-  border: 0;
-  border-top: 1px solid #ccc;
+  border: none;
+  height: 2px;
+  background-color: #3498db;
+  margin: 30px 0;
 }
+
+/* Experience & Projects */
+ul li strong {
+  color: #2c3e50;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
