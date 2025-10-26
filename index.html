@@ -167,7 +167,23 @@
       transition: 0.3s;
     }
 
-    /* Scroll fade effect */
+    /* Declaration Styling */
+    .declaration {
+      margin-top: 60px;
+      padding: 25px;
+      border: 2px dashed rgba(255,255,255,0.4);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .declaration p {
+      color: #fff;
+      font-style: italic;
+    }
+
+    /* Scroll reveal effect */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -177,6 +193,13 @@
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-bottom: 40px;
+      color: #bcbcbc;
     }
   </style>
 </head>
@@ -231,14 +254,16 @@
       <li><strong>Data Visualization (Power BI):</strong> Built dashboards to analyze sales data.</li>
     </ul>
 
-    <h2>Declaration</h2>
-    <p class="reveal">
-      I hereby declare that the information furnished above is true to the best of my knowledge.
-    </p>
+    <div class="declaration reveal">
+      <h2>Declaration</h2>
+      <p>I hereby declare that the information furnished above is true to the best of my knowledge.</p>
+      <p>Date: 20th June 2024<br>Place: Voggu Abhiram</p>
+    </div>
+
+    <footer>© 2025 Voggu Abhiram | Designed with ❤️</footer>
   </div>
 
   <script>
-    // Click button to show resume
     const btn = document.getElementById('enter-btn');
     const welcome = document.getElementById('welcome-screen');
     const resume = document.getElementById('resume-content');
@@ -258,7 +283,7 @@
       for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const revealTop = reveals[i].getBoundingClientRect().top;
-        const revealPoint = 150;
+        const revealPoint = 180;
         if (revealTop < windowHeight - revealPoint) {
           reveals[i].classList.add('active');
         }
@@ -267,6 +292,7 @@
   </script>
 </body>
 </html>
+
 
 
 
