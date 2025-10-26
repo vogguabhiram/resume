@@ -3,17 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <title>Voggu Abhiram - Resume</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Full screen landing button */
+    #landing {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      transition: all 0.5s;
+    }
+
+    .resume-btn {
+      padding: 25px 50px;
+      font-size: 2em;
+      color: #fff;
+      background-color: #2c3e50;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s, background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .resume-btn:hover {
+      background-color: #1a242f;
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+
+    /* Resume container hidden initially */
+    #resume {
+      display: none;
+      padding: 40px 50px;
+      max-width: 950px;
+      margin: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #3498db;
+    }
+
+    .header h1 {
+      font-size: 3em;
+      margin: 0;
+      background: linear-gradient(90deg, #ff758c, #ff7eb3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header .role {
+      font-size: 1.3em;
+      margin: 5px 0;
+      color: #3498db;
+      font-weight: 600;
+    }
+
+    .header .contact a {
+      color: #ff758c;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .header .contact a:hover {
+      color: #ff7eb3;
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      position: relative;
+      color: #2c3e50;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      margin-top: 5px;
+      border-radius: 3px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: white;
+      text-align: left;
+    }
+
+    ul li {
+      margin: 10px 0;
+      padding-left: 8px;
+      position: relative;
+      color: #2c3e50;
+    }
+
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #ff758c;
+      font-size: 1.2em;
+    }
+
+    hr {
+      border: none;
+      height: 3px;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      margin: 30px 0;
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      #resume {
+        padding: 25px;
+      }
+      .header h1 {
+        font-size: 2.5em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+      .resume-btn {
+        font-size: 1.4em;
+        padding: 15px 30px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Initial button container -->
-  <div id="intro">
-    <button id="showResumeBtn">Click Here for Resume</button>
+  <!-- Landing Button -->
+  <div id="landing">
+    <button class="resume-btn" id="showResumeBtn">Click Here for Resume</button>
   </div>
 
-  <!-- Resume container, hidden initially -->
-  <div id="resume" class="hidden animate-fadein">
+  <!-- Resume Content -->
+  <div id="resume">
     <div class="container">
 
       <div class="header">
@@ -69,38 +228,37 @@
       <ul>
         <li>
           <strong>Freelancer Java Developer</strong> — June 2024 – July 2024<br>
-          Independent project developing a Java-based Inventory Management System for a local business,
-          enhancing coding skills and understanding of software development life cycles.
+          Independent project developing a Java-based Inventory Management System for a local business.
         </li>
       </ul>
 
       <h2>Projects</h2>
       <ul>
         <li>
-          <strong>Inventory Management System (Java):</strong>
-          Developed a comprehensive inventory management system using Java, implementing features such as product tracking,
-          stock level alerts, and sales reporting to streamline business operations.
+          <strong>Inventory Management System (Java):</strong> Developed a comprehensive inventory management system using Java.
         </li>
         <li>
-          <strong>Data Analysis and Visualization (Power BI):</strong>
-          Created interactive dashboards and reports using Power BI to analyze sales data.
+          <strong>Data Analysis and Visualization (Power BI):</strong> Created interactive dashboards and reports using Power BI.
         </li>
       </ul>
 
       <h2>Declaration</h2>
-      <p>
-        I hereby declare that the information furnished above is true to the best of my knowledge.
-      </p>
-      <p>
-        Date: 20th June 2024<br>
-        Place: Voggu Abhiram
-      </p>
+      <p>I hereby declare that the information furnished above is true to the best of my knowledge.</p>
+      <p>Date: 20th June 2024<br>Place: Voggu Abhiram</p>
 
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('showResumeBtn').addEventListener('click', function() {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('resume').style.display = 'block';
+      window.scrollTo(0,0);
+    });
+  </script>
+
 </body>
 </html>
+
 
 
