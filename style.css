@@ -1,0 +1,73 @@
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+}
+
+/* Container for the content */
+.container {
+  color: #060606;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header styles */
+.header {
+  color: #0b0c0c;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.header .role {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+.header .contact {
+  margin: 10px 0;
+}
+
+/* Section headings */
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* Lists */
+li {
+  margin: 10px 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: #f4f4f4;
+}
+
+/* Horizontal rule */
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
