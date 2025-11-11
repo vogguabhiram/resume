@@ -1,3 +1,107 @@
 
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout Container */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004d99;
+  color: white;
+  padding: 15px 30px;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.sidebar, .content, .extra {
+  padding: 20px;
+  border: 2px solid #ccc;
+}
+
+/* Width distribution */
+.sidebar {
+  flex: 1;
+  background-color: #d9f7be;
+}
+
+.content {
+  flex: 2;
+  background-color: #e6f7ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.extra {
+  flex: 1;
+  background-color: #fff1b8;
+}
+
+/* Footer */
+.footer {
+  background-color: #004d99;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Bonus Challenge: Center element */
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border: 2px dashed #007acc;
+  margin-top: 20px;
+}
+
+.center-box button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.center-box button:hover {
+  background-color: #005c99;
+}
