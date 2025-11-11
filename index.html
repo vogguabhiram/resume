@@ -1,303 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voarion</title>
-  <!-- Favicon configuration -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
-
-
-  <style>
-    /* --- Base Styles --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      overflow-x: hidden;
-      min-height: 100vh;
-      background: linear-gradient(270deg, #ff6a00, #ee0979, #2575fc, #6a11cb);
-      background-size: 800% 800%;
-      animation: gradientFlow 12s ease infinite;
-      color: #fff;
-    }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* --- Welcome Screen --- */
-    #welcome-screen {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      transition: opacity 1s ease-in-out;
-    }
-
-    #welcome-screen h1 {
-      font-size: 3rem;
-      color: #fff;
-      margin-bottom: 30px;
-      text-shadow: 0 0 20px rgba(255,255,255,0.8);
-      animation: fadeInDown 1.5s ease;
-    }
-
-    #welcome-screen button {
-      background: #fff;
-      color: #6a11cb;
-      border: none;
-      padding: 18px 50px;
-      font-size: 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 600;
-      position: relative;
-      overflow: hidden;
-      animation: pulse 1.5s infinite;
-      transition: transform 0.3s ease;
-    }
-
-    #welcome-screen button:hover {
-      transform: scale(1.1);
-    }
-
-    #welcome-screen button::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: rgba(255,255,255,0.4);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.5s ease, height 0.5s ease;
-    }
-
-    #welcome-screen button:active::after {
-      width: 300px;
-      height: 300px;
-      transition: 0s;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
-      70% { box-shadow: 0 0 0 25px rgba(255,255,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* --- Resume Section --- */
-    #resume-content {
-      display: none;
-      opacity: 0;
-      padding: 60px 10%;
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      text-align: center;
-      color: #ffcb74;
-      text-shadow: 0 0 10px rgba(255, 203, 116, 0.8);
-      margin-bottom: 5px;
-    }
-
-    .role {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #e0e0e0;
-    }
-
-    .contact p {
-      text-align: center;
-      color: #bcbcbc;
-      margin: 5px 0;
-    }
-
-    h2 {
-      color: #00e6e6;
-      margin-top: 30px;
-      text-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
-      border-bottom: 2px solid rgba(255,255,255,0.2);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    p, li {
-      line-height: 1.6;
-      color: #f9f9f9;
-    }
-
-    ul { margin-left: 25px; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      background: rgba(255,255,255,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      text-align: left;
-    }
-
-    tr:hover {
-      background: rgba(255,255,255,0.05);
-      transition: 0.3s;
-    }
-
-    /* Declaration Styling */
-    .declaration {
-      margin-top: 60px;
-      padding: 25px;
-      border: 2px dashed rgba(255,255,255,0.4);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.05);
-      text-align: center;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-    }
-
-    .declaration p {
-      color: #fff;
-      font-style: italic;
-    }
-
-    /* Scroll reveal effect */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      padding-bottom: 40px;
-      color: #bcbcbc;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Page Layout</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Welcome screen -->
-  <div id="welcome-screen">
-    <h1>Welcome to My Portfolio</h1>
-    <button id="enter-btn">Click Here for Resume</button>
-  </div>
+  <header class="header">
+    <div class="logo">MyLogo</div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Resume section -->
-  <div id="resume-content">
-    <h1>VOGGU ABHIRAM</h1>
-    <div class="role">Software Developer</div>
-    <div class="contact">
-      <p>Email: <a href="mailto:vogguabhiram2005@gmail.com">vogguabhiram2005@gmail.com</a></p>
-      <p>Phone: 7396394280</p>
-    </div>
+  <main class="main">
+    <aside class="sidebar">Sidebar</aside>
+    <section class="content">
+      <h2>Main Content</h2>
+      <div class="center-box">
+        <button>Centered Button</button>
+      </div>
+    </section>
+    <aside class="extra">Extra Panel</aside>
+  </main>
 
-    <h2>Profile</h2>
-    <p class="reveal">
-      Motivated and adaptable final-year Computer Science Engineering student with strong Java coding skills and proven problem-solving abilities.
-      Passionate about software engineering and AI-driven solution design.
-    </p>
-
-    <h2>Education</h2>
-    <table class="reveal">
-      <tr><th>Degree</th><th>Institution</th><th>Year</th></tr>
-      <tr><td>B.Tech in Computer Science Engineering</td><td>St. Mary’s Group of Institutions</td><td>2022–2026</td></tr>
-      <tr><td>Intermediate</td><td>Sai Sri Junior College</td><td>2020–2022</td></tr>
-      <tr><td>S.S.C</td><td>ZPHS High School</td><td>2019–2020</td></tr>
-    </table>
-
-    <h2>Skills</h2>
-    <ul class="reveal">
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>CSS</li>
-      <li>Power BI</li>
-    </ul>
-
-    <h2>Experience</h2>
-    <ul class="reveal">
-      <li><strong>Freelancer Java Developer</strong> — June 2024 – July 2024<br>
-      Built a Java-based Inventory Management System for a local business.</li>
-    </ul>
-
-    <h2>Projects</h2>
-    <ul class="reveal">
-      <li><strong>Inventory Management System (Java):</strong> Created a product tracking and sales reporting app.</li>
-      <li><strong>Data Visualization (Power BI):</strong> Built dashboards to analyze sales data.</li>
-    </ul>
-
-    <div class="declaration reveal">
-      <h2>Declaration</h2>
-      <p>I hereby declare that the information furnished above is true to the best of my knowledge.</p>
-      <p>Date: 20th June 2024<br>Place: Voggu Abhiram</p>
-    </div>
-
-    <footer>© 2025 Voggu Abhiram | Designed with ❤️</footer>
-  </div>
-
-  <script>
-    const btn = document.getElementById('enter-btn');
-    const welcome = document.getElementById('welcome-screen');
-    const resume = document.getElementById('resume-content');
-
-    btn.addEventListener('click', () => {
-      welcome.style.opacity = '0';
-      setTimeout(() => {
-        welcome.style.display = 'none';
-        resume.style.display = 'block';
-        window.scrollTo(0, 0);
-      }, 1000);
-    });
-
-    // Scroll reveal animation
-    window.addEventListener('scroll', () => {
-      const reveals = document.querySelectorAll('.reveal');
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const revealTop = reveals[i].getBoundingClientRect().top;
-        const revealPoint = 180;
-        if (revealTop < windowHeight - revealPoint) {
-          reveals[i].classList.add('active');
-        }
-      }
-    });
-  </script>
+  <footer class="footer">
+    © 2025 My Website | All Rights Reserved
+  </footer>
 </body>
 </html>
+
 
 
 
